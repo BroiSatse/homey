@@ -1,1 +1,13 @@
-h2 Hello
+.flex-col.flex-grow
+  .container.bg-white.rounded-lg.mx-auto.px-8.py-4.mb-8
+    h2.font-bold.text-lg Projects
+
+  - if projects.none?
+    .container.bg-white.rounded-lg.mx-auto.px-8.py-4.text-center.opacity-60
+      p There are no projects here yet!
+
+  - projects.each do |project|
+    = link_to project, class: %w[container bg-white rounded-lg mx-auto px-8 py-4 mb-2 flex hover:bg-gray-100 pointer] do
+      span.flex-grow = project.title
+      span.text-gray-400 = project.status
+
