@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :projects, only: %i[index show] do
     member do
       post :add_comment, action: :add_comment
+      post :set_status, action: :set_status
     end
   end
   root "projects#index"

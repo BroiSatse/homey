@@ -1,8 +1,13 @@
 .container.rounded-lg.mx-auto.flex.flex-col.flex-grow.border.border-white
-  h2.font-bold.text-lg.pb-4.border-b-1.border-gray-300.px-8.py-4.bg-white.rounded-t-lg
-    | Project:
-    '
-    = project.title
+  header.flex.px-8.py-4.bg-white.border-gray-300.rounded-t-lg.pb-4.border-b-1
+    h2.font-bold.text-lg.flex-grow
+      | Project:
+      '
+      = project.title
+
+
+    = form_for project, url: set_status_project_path(project), data: { controller: 'autosubmit', turbo: false }, method: :post do |f|
+      = f.select :status, Project::STATUSES, {}, data: {action: 'autosubmit#submit'}
 
   .bg-white/60.flex-grow.bg-opacity-60.flex.flex-col.py-4.px-6
     - project.comments.each do |comment|

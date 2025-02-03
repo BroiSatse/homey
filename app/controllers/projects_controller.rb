@@ -17,6 +17,15 @@ class ProjectsController < ApplicationController
     redirect_to action: :show
   end
 
+  def set_status
+    Projects::SetStatus.new(
+      project:,
+      status: params[:project][:status],
+      user: current_user
+    ).call
+    redirect_to action: :show
+  end
+
   private
 
   def project
