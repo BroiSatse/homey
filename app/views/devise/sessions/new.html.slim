@@ -1,4 +1,4 @@
-main.bg-white.max-w-lg.mx-auto.p-8.md:p-12.my-10.rounded-lg.shadow-2xl
+main.bg-white.max-w-lg.mx-auto.p-8.md:p-12.my-10.rounded-lg.shadow-2xl.self-baseline
   section
     h3.font.bold.text-2xl Welcome to Homey Projects
     p.text-gray-600.pt-2 Sign in to your account
@@ -15,4 +15,3 @@ main.bg-white.max-w-lg.mx-auto.p-8.md:p-12.my-10.rounded-lg.shadow-2xl
         = f.label :password, class: %w[block text-gray-700 text-sm font-bold mb-2 ml-3]
         = f.password_field :password, autofocus: true, autocomplete: "password", class: %w[bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3]
       = f.submit "Log in", class: %w[block bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 w-full]
-  = render "devise/shared/links"
