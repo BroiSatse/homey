@@ -1,24 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is my solution to Homey tech challenge. It is hosted on heroku at https://homey-90321184a143.herokuapp.com
+Questions and answers with a fake stakeholder can be found under: https://homey-90321184a143.herokuapp.com/projects/3
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To access demo account, use credentials: homey@example.com / Pass1234 
