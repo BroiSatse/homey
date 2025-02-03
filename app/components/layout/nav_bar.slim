@@ -8,14 +8,14 @@ nav#header.bg-white.fixed.w-full.z-10.top-0.shadow
 
     .w-1/2.pr-0
       .flex.relative.inline-block.float-right
-        .relative.text-sm
-          button#userButton.flex.items-center.focus:outline-none.mr-3
-            = image_tag "http://i.pravatar.cc/300", class: %w[w-8 h-8 rounded-full mr-4], alt: "Avatar of User"
+        .relative.text-sm data-controller='dropdown'
+          button#userButton.flex.items-center.focus:outline-none.mr-3 data-action="dropdown#toggle"
             span.hidden.md:inline-block = current_user.email
             svg.pl-2.h-2 viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink"
               g
                 path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"
-          #userMenu.bg-white.rounded.shadow-md.mt-2.absolute.mt-12.top-0.right-0.min-w-full.overflow-auto.z-30.invisible
+
+          #userMenu.bg-white.rounded.shadow.mt-8.absolute.mt-4.top-0.right-0.min-w-full.overflow-auto.z-30.invisible data-dropdown-target='dropdown'
             ul.list-reset
               li
-                = link_to 'Log out', destroy_user_session_path, class: %w[px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline]
+                = link_to 'Log out', destroy_user_session_path, method: :delete, data: { "turbo-method": :delete }, class: %w[px-4 py-2 block text-gray-900 hover:bg-gray-200 no-underline hover:no-underline]
