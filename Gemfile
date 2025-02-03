@@ -12,6 +12,11 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem "redis", ">= 4.0.1"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
+gem 'devise'
+gem 'slim'
+gem 'view_components'
+gem 'tailwindcss-ruby'
+gem 'tailwindcss-rails'
 
 gem "bootsnap", require: false
 

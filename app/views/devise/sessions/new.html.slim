@@ -1,0 +1,18 @@
+main.bg-white.max-w-lg.mx-auto.p-8.md:p-12.my-10.rounded-lg.shadow-2xl
+  section
+    h3.font.bold.text-2xl Welcome to Homey Projects
+    p.text-gray-600.pt-2 Sign in to your account
+
+
+  section.mt-4
+    - if resource.errors
+      .block.bg-red-200.py-2.text-center.text-red-800.mb-4.rounded.border.border-red-800 Invalid email or password
+    = form_for(resource, as: resource_name, url: session_path(resource_name), class: %w[flex flex-col]) do |f|
+      .mb-6.pt-3.rounded.bg-gray-200
+        = f.label :email, class: %w[block text-gray-700 text-sm font-bold mb-2 ml-3]
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: %w[bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3]
+      .mb-6.pt-3.rounded.bg-gray-200
+        = f.label :password, class: %w[block text-gray-700 text-sm font-bold mb-2 ml-3]
+        = f.password_field :password, autofocus: true, autocomplete: "password", class: %w[bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3]
+      = f.submit "Log in", class: %w[block bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 w-full]
+  = render "devise/shared/links"
