@@ -7,7 +7,13 @@ module Projects
     attribute :user
 
     def call
+      previous_status = project.status
       project.update!(status:)
+      project.events.create!(
+        type: 'ProjectEvent::StatusChanged',
+        data: { from: previous_status, to: status },
+        user: user
+      )
     end
   end
 end

@@ -5,6 +5,9 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    project = Project
+      .includes(events: :comment)
+      .find(params[:id])
     render Projects::Show.new(project:)
   end
 

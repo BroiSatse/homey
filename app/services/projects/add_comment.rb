@@ -7,7 +7,11 @@ module Projects
     attribute :user
 
     def call
-      new_comment = project.comments.create(text: comment, user:)
+      project.transaction do
+        new_comment = project.comments.create!(text: comment, user:)
+        project.events.create!(type: 'ProjectEvent::CommentAdded', comment: new_comment, user:)
+        new_comment
+      end
     end
   end
 end
