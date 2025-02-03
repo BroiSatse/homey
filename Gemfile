@@ -14,7 +14,7 @@ gem "redis", ">= 4.0.1"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem 'devise'
 gem 'slim'
-gem 'view_components'
+gem 'view_component'
 gem 'tailwindcss-ruby'
 gem 'tailwindcss-rails'
 

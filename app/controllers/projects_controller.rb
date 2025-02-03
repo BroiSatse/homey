@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
   def index
-    render html: 'hello'
+    render Projects::Index.new
   end
 end
