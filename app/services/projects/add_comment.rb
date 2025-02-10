@@ -7,6 +7,8 @@ module Projects
     attribute :user
 
     def call
+      return if comment.blank?
+
       project.transaction do
         new_comment = project.comments.create!(text: comment, user:)
         project.events.create!(type: 'ProjectEvent::CommentAdded', comment: new_comment, user:)
